@@ -14,6 +14,7 @@ app.use((req, res, next)=>{
 })
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
+// setting the app on ejs
 app.set('view engine', 'ejs');
 
 app.get("/", function(req, res){
