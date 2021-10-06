@@ -12,7 +12,11 @@ app.use((req, res, next)=>{
 	console.log(str);
 	next();
 })
-app.use(express.static("public/"));
+app.use(express.static(__dirname + "/public"));
+app.use('*/css',express.static('public/css'));
+// app.use('*/js',express.static('public/js'));
+app.use('*/images',express.static('public/images'));
+
 app.use(bodyParser.urlencoded({extended: true}));
 // setting the app on ejs
 app.set('view engine', 'ejs');
