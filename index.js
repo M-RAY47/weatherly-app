@@ -5,6 +5,7 @@ const request = require('request');
 const app = express();
 
 const apikey = "";
+// Add RestAPI
 app.use((req, res, next)=>{
 	let {method, path, ip} = req;
 	let str =req.method + " " + req.path + " - " + req.ip;
