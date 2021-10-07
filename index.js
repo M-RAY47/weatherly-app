@@ -8,7 +8,7 @@ const apikey = "";
 // Add RestAPI
 app.use((req, res, next)=>{
 	let {method, path, ip} = req;
-	let str =req.method + " " + req.path + " - " + req.ip;
+	let str =`${req.method} ${req.path} - ${req.ip}`;
 	console.log(str);
 	next();
 })
