@@ -48,6 +48,6 @@ app.post("/", (req, res)=>{
 	})
 })
 
-app.listen(3010, function (){
-	console.log("Weatherly app is listening on port 3010!");
+app.listen(3000, function (){
+	console.log("Weatherly app is listening on port 3000!");
 })
