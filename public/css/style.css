@@ -6,6 +6,7 @@ body {
 #submit:hover {
 	cursor: pointer;
 	background-color: rgb(49, 153, 49);
+	border: 2px solid #515151;
 }
 .ghost-input, p{
 	display:block;
@@ -25,10 +26,9 @@ body {
 	width: 100%;
 }
 
-.ghost-btn-fucos{
-	margin: top 10px;
+.ghost-button:focus {
+	border-bottom: 1px solid #ddd;
 }
-
 .container{
 	width:600px;
 	margin: 0 auto;
