@@ -4,7 +4,7 @@ const request = require('request');
 
 const app = express();
 
-const apikey = "";
+const apikey = "262e856e4263d088f4387821b2e1ef20";
 // Add RestAPI
 app.use((req, res, next)=>{
 	let {method, path, ip} = req;
@@ -23,6 +23,12 @@ app.set('view engine', 'ejs');
 
 app.get("/", function(req, res){
 	res.render("index", {weather: null, error : null});
+})
+
+app.post("/", (req, res)=>{
+	let city = req.body.city;
+	let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`
+	console.log("req.body.city");
 })
 
 app.listen(3010, function (){
