@@ -3,7 +3,7 @@ body {
 	margin: 0 auto;
 	font-family: "Open Sans", sans-serif;
 }
-#submit :hover {
+#submit:hover {
 	cursor: pointer;
 	background-color: rgb(49, 153, 49);
 }
