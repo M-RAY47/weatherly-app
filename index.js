@@ -48,7 +48,7 @@ app.post("/", (req, res)=>{
 	})
 })
 
-const port = Process.env.PORT || 3000 ;
+const port = process.env.PORT || 3000 ;
 app.listen(port, ()=>{
 	console.log("Weatherly app is listening on port" + port + "!");
 })
