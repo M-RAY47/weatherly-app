@@ -21,3 +21,15 @@ body {
 .ghost-btn-fucos{
 	margin: top 10px;
 }
+
+.container{
+	width:600px;
+	margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0.7;
+	background-color: lightblue;
+	border-radius: 10px;
+}
