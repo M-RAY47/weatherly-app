@@ -17,7 +17,7 @@ app.use('*/css',express.static('public/css'));
 // app.use('*/js',express.static('public/js'));
 app.use('*/images',express.static('public/images'));
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: false}));
 // setting the app on ejs
 app.set('view engine', 'ejs');
 
@@ -27,8 +27,25 @@ app.get("/", function(req, res){
 
 app.post("/", (req, res)=>{
 	let city = req.body.city;
-	let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`
-	console.log("req.body.city");
+	let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units-metric&appid=${apikey}`;
+	console.log(req.body.city);
+	request(url, (err, response, body)=>{
+		if (err){
+			res.render("index", {weather: null, error: err});
+		} else {
+			let weather = JSON.parse(body);
+			if(weather.main == undefined){
+				res.render("index", {
+					weather: null,
+					error: `Error, please try again`
+				});
+			} else {
+				let weatherText = `It's ${weather.main.temp} degree celcuis with ${weather.weather[0].main} in ${weather.name}!`;
+				res.render("index", {weather: weatherText, error: null});
+				console.log("body:", body);
+			}
+		}
+	})
 })
 
 app.listen(3010, function (){
