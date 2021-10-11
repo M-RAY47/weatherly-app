@@ -14,8 +14,11 @@ body {
 }
 .ghost-button{
 	background-color: transparent;
+	background-color: rgb(224, 224, 224);
 	border: 2px solid #ddd;
 	padding: 10px 30px;
+	margin: 10px auto;
+	width: 100%;
 }
 
 .ghost-btn-fucos{
